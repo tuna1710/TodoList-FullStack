@@ -10,6 +10,34 @@ const knex = require('knex')({
 });
 
 const app = express();
+// --- BẮT ĐẦU PHẦN CẬP NHẬT ---
+
+// 1. Định nghĩa các origin được phép
+const allowedOrigins = [
+    'https://euphonious-cascaron-aad832.netlify.app', // URL frontend của bạn
+    'http://localhost:8080', // Thêm các URL local nếu bạn muốn test trên máy
+    'http://127.0.0.1:5500'  // Thêm URL của Live Server nếu bạn dùng
+];
+
+// 2. Cấu hình CORS
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Nếu origin của request nằm trong danh sách được phép, hoặc không có origin (VD: gọi bằng Postman)
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Cho phép các phương thức này
+    credentials: true, // Cho phép gửi cookie (nếu có)
+    optionsSuccessStatus: 204
+};
+
+// 3. Sử dụng CORS với cấu hình mới
+app.use(cors(corsOptions));
+
+// --- KẾT THÚC PHẦN CẬP NHẬT ---
 app.use(express.json()); // Cho phép server đọc dữ liệu JSON từ request
 app.use(cors());         // Cho phép cross-origin requests
 // Serve static files (HTML, CSS, JS) from the 'frontend' directory
