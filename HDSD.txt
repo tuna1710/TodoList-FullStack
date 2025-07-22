@@ -1,0 +1,22 @@
+
+
+
+Bước 5: Chạy ứng dụng
+Bây giờ bạn cần chạy cả backend và frontend.
+Chạy Backend:
+Mở một Terminal trong VS Code.
+Di chuyển vào thư mục backend: cd backend
+Chạy lệnh: node server.js
+Bạn sẽ thấy thông báo: Server đang chạy tại http://localhost:3000 và Bảng 'tasks' đã sẵn sàng.. Giữ cho terminal này chạy. Trong thư mục backend sẽ xuất hiện một file tên là todo.db - đây chính là database của bạn.
+Chạy Frontend:
+Mở file frontend/index.html bằng trình duyệt của bạn (nháy đúp chuột vào file).
+Bây giờ ứng dụng của bạn đã được kết nối với một database thực sự! Mọi thay đổi sẽ được lưu vào file todo.db. Bạn có thể đóng trình duyệt, khởi động lại máy, dữ liệu vẫn sẽ còn đó miễn là bạn chạy lại file server.js.
+
+
+Tra cứu lịch sử như thế nào?
+Với backend đã thiết lập, việc "tra cứu" trở nên rất mạnh mẽ. Bạn chỉ cần sửa đổi cách frontend gọi API.
+Ví dụ:
+Để xem các task đã hoàn thành: Gọi http://localhost:3000/api/tasks?completed=true
+Để xem các task chưa hoàn thành: Gọi http://localhost:3000/api/tasks?completed=false
+Để tìm kiếm task có chữ "mua sữa": Gọi http://localhost:3000/api/tasks?search=mua sữa
+Bạn có thể thêm các nút bấm hoặc ô tìm kiếm trên giao diện index.html để thực hiện các lời gọi API này và render lại kết quả. Đây chính là sức mạnh của việc có một backend và database riêng. Chúc bạn thành công

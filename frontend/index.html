@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App - Nâng cao</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách công việc</h1>
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Thêm một công việc mới...">
+            <button id="add-button">Thêm</button>
+        </div>
+        
+        <!-- THÊM PHẦN NÀY VÀO -->
+        <div class="filter-area">
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
+            <button class="filter-btn" data-filter="pending">Đang làm</button>
+            <button class="filter-btn" data-filter="completed">Đã hoàn thành</button>
+        </div>
+        
+        <ul id="task-list">
+            <!-- Các công việc sẽ được render ở đây bởi JavaScript -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

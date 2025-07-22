@@ -1,0 +1,11 @@
+# Thư mục chứa các gói thư viện, không cần đưa lên Git
+node_modules/
+
+# File database trên máy local, không đưa lên Git
+# Server trên Render sẽ tự tạo file database của riêng nó
+backend/todo.db
+backend/todo.db-journal
+
+# Các file hệ thống của macOS và Windows
+.DS_Store
+Thumbs.db
