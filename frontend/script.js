@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('task-input');
     const addButton = document.getElementById('add-button');
     const taskList = document.getElementById('task-list');
-    const API_URL = 'http://localhost:3000/api/tasks'; // Địa chỉ backend
+    const API_URL = 'https://my-todo-app-backend.onrender.com/api/tasks'
+    //const API_URL = 'http://localhost:3000/api/tasks'; // Địa chỉ backend
 
     let tasks = [];
 
