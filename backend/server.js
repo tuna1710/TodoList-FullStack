@@ -14,7 +14,8 @@ app.use(express.json()); // Cho phép server đọc dữ liệu JSON từ reques
 app.use(cors());         // Cho phép cross-origin requests
 // Serve static files (HTML, CSS, JS) from the 'frontend' directory
 app.use(express.static(path.join(__dirname, '../frontend')));
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+//const PORT = 3000;
 
 // --- Khởi tạo Database ---
 // Kiểm tra và tạo bảng 'tasks' nếu nó chưa tồn tại
